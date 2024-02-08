@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard - Online Market</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="logo.webp" alt="Online Market Logo" class="logo">
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Explore</a>
+        <a href="#contact">Contact</a>
+        <a href="#registration">Registration</a>
+    </nav>
+
+    <div class="dashboard">
+        <div class="main-content">
+            <div class="welcome-message">Welcome to the online marketing!</div>
+            <div class="chart-container">
+                <div class="chart">
+                    <canvas id="placeholderChart1"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="placeholderChart2"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="products">
+        <h1>Featured Products</h1>
+        <div>
+            <img src="pro1.webp" alt="Product 1">
+            <p>and maintaining strong relationships with customers is vital.
+                CRM tools help businesses manage interactions with customers, track sales,
+                and enhance customer sat</p>
+        </div>
+        <div>
+            <img src="pro2.png" alt="Product 2">
+            <p>and maintaining strong relationships with customers is vital.
+                CRM tools help businesses manage interactions with customers, track sales,
+                and enhance customer sat</p>
+        </div>
+        <div>
+            <img src="pro3.jpg" alt="Product 3">
+            <p>and maintaining strong relationships with customers is vital.
+                CRM tools help businesses manage interactions with customers, track sales,
+                and enhance customer sat</p>
+        </div>
+        <div>
+            <img src="body.jpg" alt="Product 4">
+            <p>and maintaining strong relationships with customers is vital.
+                CRM tools help businesses manage interactions with customers, track sales,
+                and enhance customer sat</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            <br> 1. Market Research:
+            Conducting market research helps businesses understand the market environment,
+            customer preferences, and competition. It involves gathering and analyzing data to make
+            informed business decisions.
+            <br> 2. Brand Building:
+            Creating a strong and memorable brand is essential for long-term success.
+            This includes developing a unique value proposition, consistent messaging, and visual identity.
+            <br>
+            3. Customer Relationship Management (CRM):
+            Building and maintaining strong relationships with customers is vital.
+            CRM tools help businesses manage interactions with customers, track sales,
+            and enhance customer satisfaction.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="registration">
+        <h2>Registration</h2>
+        <form>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="somalia">Somalia</option>
+                <option value="turki">Turkey</option>
+                <option value="borama">Borama</option>
+            </select>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Market. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const placeholderData1 = {
+            labels: ["Category A", "Category B", "Category C"],
+            datasets: [
+                {
+                    label: "Categories",
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                    ],
+                    hoverOffset: 4,
+                },
+            ],
+        };
+
+        const placeholderConfig1 = {
+            type: "pie",
+            data: placeholderData1,
+        };
+
+        const placeholderData2 = {
+            labels: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"],
+            datasets: [
+                {
+                    label: "Customers",
+                    data: [50, 60, 70, 180, 190],
+                    backgroundColor: "rgb(54, 162, 235)",
+                },
+                {
+                    label: "Products",
+                    data: [80, 90, 150, 100, 120],
+                    backgroundColor: "rgb(255, 99, 132)",
+                },
+            ],
+        };
+
+        const placeholderConfig2 = {
+            type: "bar",
+            data: placeholderData2,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        };
+
+        window.onload = function () {
+            var placeholderChart1 = document.getElementById("placeholderChart1").getContext("2d");
+            new Chart(placeholderChart1, placeholderConfig1);
+
+            var placeholderChart2 = document.getElementById("placeholderChart2").getContext("2d");
+            new Chart(placeholderChart2, placeholderConfig2);
+        };
+    </script>
+</body>
+
+</html>
